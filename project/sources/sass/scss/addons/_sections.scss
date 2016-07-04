@@ -1,0 +1,144 @@
+/*
+ *
+ * Sections and colors
+ *
+ */
+.section {
+    padding: rem-calc(15px) 0;
+    @include emencia-container-colors($Gray10, $FloralWhite,
+                                          $link-color: $primary-color,
+                                          $h1-color: $Gray29,
+                                          $h2-color: $Gray29,
+                                          $h3-color: $Gray29,
+                                          $h4-color: $Gray29,
+                                          $h5-color: $Gray29);
+
+    @media #{$medium-up} {
+        padding: rem-calc(20px) 0;
+    }
+    @media #{$large-up} {
+        padding: rem-calc(40px) 0;
+    }
+    @media #{$xlarge-up} {
+        padding: rem-calc(50px) 0;
+    }
+    // Replicate section padding to direct inner element
+    // TODO: settings responsive padding should be done from a common mixin
+    .inner{
+        @media #{$medium-up} {
+            padding: rem-calc(20px) 0;
+        }
+        @media #{$large-up} {
+            padding: rem-calc(40px) 0;
+        }
+        @media #{$xlarge-up} {
+            padding: rem-calc(50px) 0;
+        }
+    }
+
+    &.fit{
+        min-height: calc(100vh - #{$topbar-height});
+    }
+
+    // Thin padding
+    &.thin,
+    & > .inner.thin{
+        padding: rem-calc(10px) 0;
+        @media #{$medium-up} {
+            padding: rem-calc(15px) 0;
+        }
+    }
+
+    // Tiny padding
+    &.tiny,
+    & > .inner.tiny{
+        padding: rem-calc(10px) 0;
+        @media #{$medium-up} {
+            padding: rem-calc(15px) 0;
+        }
+        @media #{$large-up} {
+            padding: rem-calc(30px) 0;
+        }
+    }
+
+    // Taller padding
+    &.tall,
+    & > .inner.tall{
+        padding: rem-calc(20px) 0;
+        @media #{$medium-up} {
+            padding: rem-calc(45px) 0;
+        }
+        @media #{$large-up} {
+            padding: rem-calc(80px) 0;
+        }
+        @media #{$xlarge-up} {
+            padding: rem-calc(90px) 0;
+        }
+    }
+
+    // Unpadded section or inner element
+    &.unpadded,
+    & > .inner.unpadded{
+        padding:0;
+    }
+
+    // Color variants
+    &.black{
+        @include emencia-container-colors($white, $black,
+                                          $link-color: $SteelBlue1,
+                                          $h1-color: $white,
+                                          $h2-color: $white,
+                                          $h3-color: $white,
+                                          $h4-color: $white,
+                                          $h5-color: $white);
+    }
+
+    &.white{
+        @include emencia-container-colors($Gray10, $white,
+                                          $link-color: $primary-color);
+    }
+
+    &.gray10{
+        @include emencia-container-colors($FloralWhite, $Gray10,
+                                          $link-color: $primary-color);
+    }
+
+    &.khaki1{
+        @include emencia-container-colors($Gray10, $Khaki1,
+                                          $link-color: $primary-color);
+    }
+
+    &.paleblue{
+        @include emencia-container-colors(darken($PaleBlue, 70%), $PaleBlue,
+                                          $link-color: $white);
+
+    }
+
+    &.paleblue-gradient{
+        @include emencia-container-colors(darken($PaleBlue, 70%), $PaleBlue,
+                                          $link-color: $white);
+        @include background(linear-gradient($PaleBlue, $FloralWhite));
+    }
+
+    &.gray29{
+        @include emencia-container-colors($FloralWhite, $Gray29,
+                                          $link-color: $primary-color);
+    }
+
+    &.steelblue1{
+        @include emencia-container-colors($FloralWhite, $SteelBlue1,
+                                          $link-color: $Khaki1);
+    }
+
+    &.floralwhite-gradient{
+        @include emencia-container-colors($Gray10, $FloralWhite,
+                                          $link-color: $primary-color,
+                                          $h1-color: $Gray29,
+                                          $h2-color: $Gray29,
+                                          $h3-color: $Gray29,
+                                          $h4-color: $Gray29,
+                                          $h5-color: $Gray29);
+        @include background(linear-gradient(180deg, $FloralWhite 0%, $white 10%));
+    }
+
+}

@@ -1,0 +1,28 @@
+{% extends "_includes/_skeleton.html" %}
+
+{% block header_topbar %}{% endblock %}
+{% block footer_container %}{% endblock %}
+
+{% block base_css %}{% assets "notecard_css" %}
+    <link rel="stylesheet" href="{{ page_relative_position }}{{ ASSET_URL }}">
+{% endassets %}{% endblock %}
+
+{% block base_content %}
+<div id="body_content">
+    <div class="inner">
+        <p class="brand-name"><a href="/" title="{{ SITE.name }}">{{ SITE.name }}</a></p>
+        <h1 class="brand-subline">Agencement intérieur et Stands d'exposition</h1>
+        <hr>
+        <p>SARL SJC Menuiserie</p>
+        <p>24600 Ribérac</p>
+        <hr>
+        <p><strong>Téléphone&nbsp;:</strong> 07 83 34 76 56</p>
+        <p><strong>Email&nbsp;:</strong> <a href="mailto:contact@sjc-menuiserie.fr">contact@sjc-menuiserie.fr</a></p>
+    </div>
+</div>
+{% endblock %}
+
+{% block more_js %}
+{% assets "main_js" %}
+    <script src="{{ page_relative_position }}{{ ASSET_URL }}"></script>
+{% endassets %}{% endblock %}

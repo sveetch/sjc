@@ -1,0 +1,87 @@
+/*
+ *
+ * All stuff for page header
+ *
+ */
+#header-container{
+    .top-bar{
+        .title-area{
+            .name{
+                color: $SteelBlue1;
+
+                .brand-name{
+                    font-family: $RalewayFont;
+                    a{
+                        font-weight: 400;
+                        color: inherit;
+                        font-family: inherit;
+                    }
+                }
+                .brand-subline{
+                    color: $white;
+                    font-family: $RalewayFont;
+                    a{
+                        color: inherit;
+                        font-family: inherit;
+                    }
+                }
+            }
+        }
+
+        .top-bar-section{}
+    }
+
+    // Medium breakpoint and more behaviors
+    @media #{$topbar-media-query} {
+        .fixed{
+            border-bottom: 10px solid darken($SteelBlue1, 10%);
+
+            .top-bar{
+                .title-area{
+                    margin: 1rem 0;
+                    padding: 0;
+
+                    .name{
+                        height: auto;
+                        color: $SteelBlue1;
+                        text-align: center;
+
+                        .brand-name{
+/*                            font-size: 3.5rem;
+                            line-height: 4rem;*/
+                            font-size: 3rem;
+                            line-height: 3.5rem;
+
+                            a{
+                                font-size: inherit;
+                            }
+                        }
+                        .brand-subline{
+/*                            font-size: 1.2rem;
+                            line-height: 2rem;*/
+                            font-size: 1rem;
+                            line-height: 1.8rem;
+
+                            a{
+                                font-size: inherit;
+                            }
+                        }
+                    }
+                }
+                .top-bar-section{
+                    .menu li a{
+                        //border-bottom: 1px solid $topbar-bg-color;
+                        font-weight: 600;
+                        color: $FloralWhite;
+
+                        &:hover{
+                            //border-bottom: 1px solid $FloralWhite;
+                            background-color: $topbar-bg-color;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

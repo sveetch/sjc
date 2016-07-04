@@ -1,0 +1,21 @@
+*.pyc
+
+# Various directory index, temp file and editor's config
+*.DS_Store
+*.idea
+.*.swp
+
+# virtualenv
+/bin
+/include
+/lib
+/lib64
+/build
+/local
+
+# setuptools, pip, etc..
+.installed.cfg
+pip-selfcheck.json
+
+# Assets
+/foundation5

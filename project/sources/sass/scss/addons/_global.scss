@@ -1,0 +1,42 @@
+/*
+ * Various stuff that don't fit elsewhere
+ */
+
+/*
+ * Some styling for this JS component stuff (read more on 'js/jquery/addons.js')
+ */
+#watch-for-current-mquery{
+    padding: 0.0rem 0.5rem;
+    position: absolute;
+    top: 10px;
+    right: 35px;
+    font-size: 14px;
+    font-weight:bold;
+    line-height:1.4;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid $alert-color;
+    background-color: $white;
+    z-index: 9000;
+
+    small{
+        display: block;
+    }
+}
+
+
+// Shortcut relative position
+.relative-position {
+    position: relative;
+}
+
+/*
+ * Attempt to use columns-* properties
+ */
+.strip-container{
+    @include columns(auto 2);
+
+    .strip-cell{
+        @include break-inside(avoid);
+    }
+}

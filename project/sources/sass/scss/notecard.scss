@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+@import "settings";
+
+$body-bg: $Gray10;
+$body-font-color: $FloralWhite;
+
+
+/*
+ * Full Foundation components import for development process
+ *
+ * WARNING: Do not use this full import when passing to production,
+ * instead select all needed component one by one
+ */
+/* @import "foundation"; */
+/*
+ * All foundation components, one by one
+*/
+/*
+@import
+  "foundation/components/accordion",
+  "foundation/components/alert-boxes",
+  "foundation/components/block-grid",
+  "foundation/components/breadcrumbs",
+  "foundation/components/button-groups",
+  "foundation/components/buttons",
+  "foundation/components/clearing",
+  "foundation/components/dropdown",
+  "foundation/components/dropdown-buttons",
+  "foundation/components/flex-video",
+  "foundation/components/forms",
+  "foundation/components/grid",
+  "foundation/components/inline-lists",
+  "foundation/components/joyride",
+  "foundation/components/keystrokes",
+  "foundation/components/labels",
+  "foundation/components/magellan",
+  "foundation/components/pagination",
+  "foundation/components/panels",
+  "foundation/components/pricing-tables",
+  "foundation/components/progress-bars",
+  "foundation/components/reveal",
+  "foundation/components/side-nav",
+  "foundation/components/split-buttons",
+  "foundation/components/sub-nav",
+  "foundation/components/switches",
+  "foundation/components/tables",
+  "foundation/components/tabs",
+  "foundation/components/thumbs",
+  "foundation/components/tooltips",
+  "foundation/components/top-bar",
+  "foundation/components/type",
+  "foundation/components/offcanvas",
+  "foundation/components/visibility";
+*/
+@import
+  "foundation/components/buttons",
+  "foundation/components/grid",
+  "foundation/components/top-bar",
+  "foundation/components/type",
+  "foundation/components/visibility";
+
+/*
+ * Bourbon library to have some useful mixins
+ */
+@import "bourbon";
+
+/*
+ * Used components
+ */
+
+@import "utils/mixins";
+
+@import "addons/fullstack";
+
+#body_content{
+    @include display(flex);
+    width: 100vw;
+    height: 100vh;
+
+    .inner{
+        @include flex(1 0 auto);
+        @include display(flex);
+        @include flex-direction(column);
+        @include justify-content(center);
+        max-width: 320px;
+        margin: 0 auto;
+        text-align: center;
+
+        p {
+            margin: 0;
+        }
+
+        a{
+            font-weight: 400;
+        }
+        .brand-name{
+            margin: 0;
+            color: $SteelBlue1;
+            font-family: $RalewayFont;
+            font-size: 2.75rem;
+            line-height: 1.1;
+
+            a{
+                color: inherit;
+                font-family: inherit;
+            }
+        }
+        .brand-subline{
+            font-size: 0.95rem;
+            font-family: $RalewayFont;
+        }
+    }
+}
+
+/*
+ * Sometime, you need fallback hacks for some specific browsers, it should allways be
+ * at the end to be able to override every others components
+ */
+@import "utils/browser_fallbacks";

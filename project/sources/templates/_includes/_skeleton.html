@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="{% block html_attr_alt %}{% endblock %}no-js lt-ie9" lang="fr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="{% block html_attr %}{% endblock %}no-js" lang="fr"> <!--<![endif]-->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <meta charset="utf-8">
+    <title>{% block head_title %}{{ SITE.name }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {#<link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}favicon.ico">#}
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet">
+    {% block header_content %}
+        {% block head_metas %}
+            <meta name="robots" content="index,follow,all">
+            <meta content="Spécialisée dans les travaux d'aménagement intérieur, l'entreprise SJC Menuiserie, intervient aussi bien auprès des professionnels que des particuliers pour prendre en charge tous types de travaux de menuiserie, en neuf ou en rénovation." name="description">
+            <meta content="Agencement intérieur et Stands d'exposition" property="og:title">
+            <meta content="Spécialisée dans les travaux d'aménagement intérieur, l'entreprise SJC Menuiserie, intervient aussi bien auprès des professionnels que des particuliers pour prendre en charge tous types de travaux de menuiserie, en neuf ou en rénovation." property="og:description">
+            <meta content="website" property="og:type">
+            <meta content="http://sjc-menuiserie.fr/" property="og:url">
+            <meta content="{{ SITE.name }}" property="og:site_name">
+            {#<meta content="2016-04-20T04:44:38.885346+00:00" property="article:published_time">
+            <meta content="2016-06-14T12:46:50.211036+00:00" property="article:modified_time">#}
+        {% endblock %}
+
+        {% block base_css %}{% assets "main_css" %}
+            <link rel="stylesheet" href="{{ page_relative_position }}{{ ASSET_URL }}">
+        {% endassets %}{% endblock %}
+        {% block more_css %}{% endblock %}
+        {% block base_js %}{% assets "app_modernizr_js" %}
+            <script src="{{ page_relative_position }}{{ ASSET_URL }}"></script>
+        {% endassets %}{% endblock %}
+        {% block head_more_links %}{% endblock %}
+    {% endblock %}
+</head>
+
+<body{% block body_attr %}{% endblock %}>
+    {% block header_topbar %}
+    <div id="header-container">
+        <div class="fixed">
+            <nav class="top-bar" data-topbar role="navigation">
+                <ul class="title-area">
+                    <li class="name">
+                        <p class="brand-name"><a href="/" title="{{ SITE.name }}">{{ SITE.name }}</a></p>
+                        <h1 class="brand-subline">Agencement intérieur et Stands d'exposition</h1>
+                    </li>
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                </ul>
+
+                <div class="top-bar-section">
+                    <ul class="menu right">
+                        <li><a href="#particuliers">Particuliers</a></li>
+                        <li><a href="#professionnels">Professionnels</a></li>
+                        <li><a href="#realisations">Réalisations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    {% endblock %}
+
+
+    {% block content_container %}<div id="body_content"{% block content_container_attrs %}{% endblock %}>
+        {% block base_content %}{% endblock %}
+    </div>{% endblock %}
+
+    {% block footer_container %}
+    <footer class="row v-space-around">
+        <div class="large-12 columns text-center">
+            <p><small class="big">Tout droits réservés &copy; {{ datenow.strftime('%Y') }} <b>{{ SITE.name }}</b></small></p>
+        </div>
+    </footer>
+    {% endblock %}
+
+    {% block more_js %}
+    {% include '_includes/_prevent_anchor_jump.html' %}
+    {% assets "main_js" %}
+        <script src="{{ page_relative_position }}{{ ASSET_URL }}"></script>
+    {% endassets %}{% endblock %}
+</body>
+</html>

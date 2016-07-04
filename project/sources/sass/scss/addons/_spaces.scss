@@ -1,0 +1,183 @@
+/*
+ * All about spaces around elements
+ */
+
+// Remove all margins
+.unmarged {
+    margin: 0 !important;
+}
+
+// Sometime we need to separate an element from an another adjacent element
+.divider:not(li) {
+    margin-bottom: 2rem;
+
+    &.tiny-divide{
+        margin-bottom: 1rem;
+    }
+
+    &.big-divide{
+        margin-bottom: 3rem;
+    }
+}
+
+/*
+ * Explicit vertical spaces around element
+ */
+.v-space-around{
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+
+    @media #{$medium-up} {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+    }
+    @media #{$large-up} {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    @media #{$xlarge-up} {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    // Tiny spaces
+    &.v-tiny-space{
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+
+        @media #{$medium-up} {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+
+    // Medium spaces
+    &.v-medium-space{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        @media #{$medium-up} {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    // Wider spaces
+    &.v-wide-space{
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+
+        @media #{$medium-up} {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+        @media #{$large-up} {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    }
+
+    // Larger spaces
+    &.v-large-space{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        @media #{$medium-up} {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        @media #{$large-up} {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+    }
+
+    // For only top or bottom space
+    &.top-only{
+        padding-bottom: 0;
+    }
+    &.bottom-only{
+        padding-top: 0;
+    }
+}
+
+/*
+ * Explicit vertical spaces around element
+ */
+.h-space-around{
+    padding-left: .7rem;
+    padding-right: .7rem;
+
+    @media #{$medium-up} {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+    @media #{$large-up} {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    @media #{$xlarge-up} {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    // Tiny spaces
+    &.h-tiny-space{
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+
+        @media #{$medium-up} {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
+    // Medium spaces
+    &.h-medium-space{
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        @media #{$medium-up} {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+
+    // Wider spaces
+    &.h-wide-space{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        @media #{$medium-up} {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+        @media #{$large-up} {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+    }
+
+    // Larger spaces
+    &.h-large-space{
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        @media #{$medium-up} {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+        @media #{$large-up} {
+            padding-left: 5rem;
+            padding-right: 5rem;
+        }
+    }
+
+    // For only left or right space
+    &.left-only{
+        padding-right: 0;
+    }
+    &.right-only{
+        padding-left: 0;
+    }
+}

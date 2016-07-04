@@ -1,0 +1,107 @@
+@import "foundation/functions";
+
+//
+// FOUNDATION SETTINGS
+// See utils/_sample_settings.scss for a full list of available settings
+//
+
+//
+// Settings overrides goes below
+//
+
+// Control wether a link to google open-sans font is included or not, default
+// is true. Change value to 'false' if you dont use Open Sans in profit of
+// other another font, to avoid loading OpenSans for nothing
+$include-open-sans: true;
+
+// Basics
+$white: #ffffff;
+$black: #000000;
+
+// Various
+$FloralWhite: #f9f6f0;
+
+// Starry Magician Color Palette
+// http://www.color-hex.com/color-palette/20355
+$Gray10: #181818;
+$Khaki1: #f8ff8f;
+$white: #ffffff;
+$PaleBlue: #b3eaff;
+$Gray29: #494949;
+
+// vaneData Color Palette
+// http://www.color-hex.com/color-palette/20270
+// Usage only inside brand
+$IronGrey1: #ccd1d9;
+$IronGrey5: #434a54;
+$IronGrey10: #272c31;
+$SteelBlue1: #5fadf3;
+$DodgerBlue4: #0b467b;
+
+$primary-color: $SteelBlue1;
+
+// Enable xlarge and xxlarge columns class names into the grid
+$include-xl-html-grid-classes: false;
+
+// Larger row width for xlarge screens and more
+$row-larger-width: rem-calc(1328px);
+
+// c. Global
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$RalewayFont: 'Raleway', sans-serif;
+$OpenSansFont: 'Open Sans', sans-serif;
+
+$font-family-sans-serif: $OpenSansFont;
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+
+$body-bg: $white;
+$body-font-color: $Gray10;
+/* $body-font-family: $NoricanFont; */
+
+
+// e. Typography
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// We use these to control header font styles
+$header-font-color: $white;
+
+
+// We use these to control header font sizes
+// $h1-font-size: rem-calc(44);
+$h2-font-size: 2.5rem;
+// $h3-font-size: rem-calc(27);
+// $h4-font-size: rem-calc(23);
+// $h5-font-size: rem-calc(18);
+// $h6-font-size: 1rem;
+
+// We use these to control header size reduction on small screens
+// $h1-font-reduction: rem-calc(10);
+$h2-font-reduction: 0.6rem;
+// $h3-font-reduction: rem-calc(5);
+// $h4-font-reduction: rem-calc(5);
+// $h5-font-reduction: 0;
+// $h6-font-reduction: 0;
+
+// 34. Top Bar
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$topbar-breakpoint: rem-calc(1025px); // Change to 9999px for always mobile layout
+
+$topbar-bg-color: $Gray10;
+$topbar-bg: $topbar-bg-color;
+$topbar-link-bg-color-hover: $topbar-bg-color;
+$topbar-dropdown-bg: $topbar-bg-color;
+$topbar-dropdown-link-bg: $topbar-bg-color;
+$topbar-dropdown-link-bg-hover: $topbar-bg-color;
+$topbar-dropdown-label-bg: $topbar-bg-color;
+$topbar-link-hover-lightness: 0;
+
+/* $topbar-height: 8rem; */
+$topbar-height: 7.5rem;
+
+$topbar-title-font-size: 2.5rem;
+$topbar-link-font-size: 1rem;
+$topbar-title-weight: 600;
+$topbar-link-text-transform: uppercase;
+

@@ -22,20 +22,19 @@ AVALAIBLE_BUNDLES = {
         "js/foundation5/vendor/jquery.js",
         "js/foundation5/vendor/jquery.cookie.js",
         "js/foundation5/foundation/foundation.js",
-        "js/foundation5/foundation/foundation.abide.js",
-        "js/foundation5/foundation/foundation.accordion.js",
-        "js/foundation5/foundation/foundation.alert.js",
+        #"js/foundation5/foundation/foundation.abide.js",
+        #"js/foundation5/foundation/foundation.accordion.js",
+        #"js/foundation5/foundation/foundation.alert.js",
         "js/foundation5/foundation/foundation.clearing.js",
-        "js/foundation5/foundation/foundation.dropdown.js",
-        #"js/foundation5/foundation/foundation.equalizer.js",
-        "js/foundation5/foundation/foundation.interchange.js",
-        "js/foundation5/foundation/foundation.joyride.js",
-        "js/foundation5/foundation/foundation.magellan.js",
-        "js/foundation5/foundation/foundation.offcanvas.js",
-        "js/foundation5/foundation/foundation.reveal.js",
-        "js/foundation5/foundation/foundation.slider.js",
-        "js/foundation5/foundation/foundation.tab.js",
-        "js/foundation5/foundation/foundation.tooltip.js",
+        #"js/foundation5/foundation/foundation.dropdown.js",
+        #"js/foundation5/foundation/foundation.interchange.js",
+        #"js/foundation5/foundation/foundation.joyride.js",
+        #"js/foundation5/foundation/foundation.magellan.js",
+        #"js/foundation5/foundation/foundation.offcanvas.js",
+        #"js/foundation5/foundation/foundation.reveal.js",
+        #"js/foundation5/foundation/foundation.slider.js",
+        #"js/foundation5/foundation/foundation.tab.js",
+        #"js/foundation5/foundation/foundation.tooltip.js",
         "js/foundation5/foundation/foundation.topbar.js",
         filters='yui_js',
         output='js/app_foundation5.min.js'
@@ -74,6 +73,9 @@ AVALAIBLE_BUNDLES.update({
 
         ## Throttling event from jquery-smartresize
         #"js/jquery/jquery.throttledresize.js",
+
+        # gmaps.js plugin for Google map
+        "js/jquery/gmaps.js",
 
         # Image swapping plugin
         "js/jquery/jquery.image-swapper.js",

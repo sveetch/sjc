@@ -2,17 +2,21 @@
 
 {% block base_content %}
 <div class="section paleblue tiny fit flex-grid large-marged" id="presentation">
-    <div class="cell large-48 flex-vertical-center-stack h-space-around h-wide-space">
+    <div class="cell small-98 large-48 flex-vertical-center-stack h-space-around h-wide-space">
         <h2 class="text-center text-upper text-strong v-space-around">Une entreprise familiale et artisanale</h2>
         <p class="title-4 divider"><b>Spécialisée dans les travaux d'aménagement intérieur</b>, l'entreprise <b>SJC Menuiserie</b>, intervient aussi bien auprès des professionnels que des particuliers pour prendre en charge tous types de travaux de menuiserie, en neuf ou en rénovation.</p>
         <p><b>Sébastien CHAPRON</b>, gérant de l’entreprise, est un menuisier d'agencement disposant de 18 ans d'expérience dans le domaine de la menuiserie.</p>
         <p>Il a acquis au fil des années un grand savoir-faire, qu'il souhaite partager avec vous pour vous aider à concrétiser vos projets.</p>
         <p>Au travers de ses expériences professionnelles, il a été amené à travailler sur <b>tous types d'ouvrages</b> et sur l'<b>agencement de tout espace</b> (magasins, bureaux, stands d’exposition, dressings...).</p>
     </div>
-    <div class="cell large-48 flex-vertical-center-stack">
-        <p class="title-4 text-center v-space-around">Du classique au moderne, du panneau mélaminé au bois massif en passant par le stratifié, nous saurons donner vie à toutes vos envies.</p>
-        <p class="title-3 text-center v-space-around">Votre projet est unique, il l'est aussi pour nous !</p>
-        <p class="text-center v-space-around"><a href="#contact" class="button large strong radius">N'hésitez pas à nous contacter pour de plus amples renseignements</a></p>
+    <div class="cell small-98 large-48 flex-vertical-center-stack">
+        <div class="row larger">
+            <div class="small-12 columns">
+                <p class="title-4 text-center v-space-around">Du classique au moderne, du panneau mélaminé au bois massif en passant par le stratifié, nous saurons donner vie à toutes vos envies.</p>
+                <p class="title-3 text-center v-space-around">Votre projet est unique, il l'est aussi pour nous !</p>
+                <p class="text-center v-space-around"><a href="#contact" class="button large strong radius">N'hésitez pas à nous contacter pour de plus amples renseignements</a></p>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -58,13 +62,7 @@
         <div class="small-12 columns">
             <h2 class="text-center text-upper text-strong v-space-around">Réalisations</h2>
             <ul class="clearing-thumbs" data-clearing>
-                {% for filename in get_gallery('images/realisations_set') %}
-                <li>
-                    <a href="{{ STATIC_URL }}images/realisations_set/large/{{ filename }}">
-                        <img src="{{ STATIC_URL }}images/realisations_set/{{ filename }}" alt="">
-                    </a>
-                </li>
-                {% endfor %}
+                {% for filename in get_gallery('images/realisations_set') %}<li><a href="{{ STATIC_URL }}images/realisations_set/large/{{ filename }}"><img src="{{ STATIC_URL }}images/realisations_set/{{ filename }}" alt=""></a></li>{% endfor %}
             </ul>
         </div>
     </div>
@@ -74,12 +72,12 @@
     <div class="row larger v-space-around">
         <div class="small-12 columns text-center">
             <h2 class="text-center text-upper text-strong divider">Contact</h2>
+            <div class="h-space-around v-space-around">
+                <p class="title-2 text-steelblue1">{{ SITE.name }}</p>
+            </div>
             <div class="flex-grid marged">
-                <div class="cell small-98 h-space-around v-space-around">
-                    <p class="title-2 text-steelblue1">{{ SITE.name }}</p>
-                </div>
-                <div class="cell small-98 large-31 h-space-around">
-                    <img src="http://fpoimg.com/320x240" alt="">
+                <div class="cell small-98 large-31 h-space-around" id="location-map">
+                    <div id="gmap-container"></div>
                 </div>
                 <div class="cell small-98 large-31 h-space-around">
                     <p class="title-4">Agencement intérieur et Stands d'exposition</p>

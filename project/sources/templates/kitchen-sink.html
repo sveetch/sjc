@@ -244,9 +244,7 @@
                 <tbody>{% for name, hexa, css in colors %}
                     <tr>
                         <td>{{ name }}</td>
-                        <td>
-                            <p style="width: 100px; height: 40px; border:1px solid {{ hexa }}; background-color: {{ hexa }};"></p>
-                        </td>
+                        <td><p style="width: 100px; height: 40px; border:1px solid {{ hexa }}; background-color: {{ hexa }};"></p></td>
                         <td>{{ hexa }}</td>
                         <td class="{{ css }}">.{{ css }}</td>
                     </tr>

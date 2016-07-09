@@ -31,7 +31,7 @@ class BasePage(PageViewBase):
             gallery_dir = os.path.join(settings.STATIC_DIR, path)
             files = [item for item in os.listdir(gallery_dir) if os.path.isfile(os.path.join(gallery_dir, item))]
 
-        return files
+        return sorted(files)
 
     def get_context(self):
         context = super(BasePage, self).get_context()
@@ -45,7 +45,9 @@ class BasePage(PageViewBase):
 
 # Enabled pages to build
 PAGES = [
-    BasePage(),
+    BasePage(
+        destination="preview.html",
+    ),
     BasePage(
         title="Kitchen Sink",
         template_name="kitchen-sink.html",
@@ -54,6 +56,7 @@ PAGES = [
     BasePage(
         title="Note card",
         template_name="notecard.html",
-        destination="notecard.html",
+        #destination="notecard.html",
+        destination="index.html",
     ),
 ]

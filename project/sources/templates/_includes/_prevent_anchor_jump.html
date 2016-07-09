@@ -1,7 +1,7 @@
 <script type="text/javascript">
     /* <![CDATA[ */
-    // Disable anchor jump
-    if (location.hash) {
+    // Disable anchor jump only for medium screen and more
+    if( Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 640 && location.hash) {
         //console.log("From document: Location hash detected:"+ location.hash);
 
         if(history.pushState) {

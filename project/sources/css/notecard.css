@@ -4743,21 +4743,9 @@ dd .button:last-child {
   }
 }
 
-/*
- * 
- * Everything related to breadcrumbs
- *
- */
-/*
- * 
- * Pagination
- * 
- */
-/*
- * 
- * Restyling and addons on Foundation forms
- * 
- */
+/* @import "breadcrumbs"; */
+/* @import "pagination"; */
+/* @import "forms"; */
 /*
  * Create flex cell width rules
  */
@@ -5809,9 +5797,7 @@ html.no-flexbox .flex-grid {
   }
 }
 
-/*
- * SVG stuff
- */
+/* @import "svgs"; */
 /*
  * Tables
  */
@@ -6172,49 +6158,8 @@ ul.arrow.defer li > *:first-child:before {
   transform: translate(0%, -50%);
 }
 
-/*
- * 
- * Panels
- * 
- */
-.panel {
-  /*
-     * Remove additional titles top margin
-     */
-  /*
-     * Last paragraph in any container never have bottom margin
-     */
-  /*
-     * Remove negative children for direct .row elements
-     */
-}
-
-.panel h1:first-child,
-.panel h2:first-child,
-.panel h3:first-child,
-.panel h4:first-child,
-.panel h5:first-child,
-.panel h6:first-child,
-.panel p:first-child {
-  margin-top: 0 !important;
-}
-
-.panel p:last-child {
-  margin-bottom: 0;
-}
-
-.panel > .row, html.no-flexbox .panel > .flex-grid,
-.panel > * > .row, html.no-flexbox
-.panel > * > .flex-grid {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-/*
- * 
- * Restyling and addons on Foundation tabs
- * 
- */
+/* @import "panels"; */
+/* @import "tabs"; */
 #body_content {
   display: -webkit-box;
   display: -moz-box;

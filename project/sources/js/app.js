@@ -32,8 +32,9 @@ jQuery(window).load(function () {
 
     /*
      * Restore "jump to anchor" behavior on page loaded but adding an offset
+     * Only for medium screens and more
      */
-    if (location.hash) {
+    if( Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 640 && location.hash) {
         var $header = $('#header-container'),
             offset = 0;
 
@@ -47,12 +48,14 @@ jQuery(window).load(function () {
         }
         //console.log("offset:"+offset);
         setTimeout(function() {
-            // The fasted method is the raw way with 'scrollTo'
-            window.scrollTo(0, $(location.hash).offset().top - offset);
-            // For more animated and longer scroll, the 'jQuery animate'
-            /*$('html, body').animate({
-                scrollTop: $(location.hash).offset().top - offset
-            }, 100, 'swing', function () {});*/
+            if($(location.hash).length > 0){
+                // The fasted method is the raw way with 'scrollTo'
+                window.scrollTo(0, $(location.hash).offset().top - offset);
+                // For more animated and longer scroll, the 'jQuery animate'
+                /*$('html, body').animate({
+                    scrollTop: $(location.hash).offset().top - offset
+                }, 100, 'swing', function () {});*/
+            }
         },1)
     }
 });
@@ -114,6 +117,185 @@ jQuery(document).ready(function($) {
             scrollTop: $(the_id).offset().top - offset
         }, 'slow');
         return true;
+    });
+
+    /*
+     * Google map render using gmaps.js and styling
+     */
+    var map = new GMaps({
+        el: '#gmap-container',
+        scrollwheel: false,
+        lat: 45.246480,
+        lng: 0.338336,
+        zoom: 10
+    });
+
+    // Add styling from JSON data https://snazzymaps.com/style/8381/even-lighter
+    map.addStyle({
+        styledMapName:"Styled Map",
+        styles: [
+            {
+                "featureType": "administrative",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#6195a0"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#f2f2f2"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi.park",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#e6f3d6"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "saturation": -100
+                    },
+                    {
+                        "lightness": 45
+                    },
+                    {
+                        "visibility": "simplified"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#f4d2c5"
+                    },
+                    {
+                        "visibility": "simplified"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.text",
+                "stylers": [
+                    {
+                        "color": "#4e4e4e"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#f4f4f4"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#787878"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#eaf6f8"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#eaf6f8"
+                    }
+                ]
+            }
+        ],
+        mapTypeId: "map_style"
+    });
+    map.setStyle("map_style");
+    // Markers for places
+    map.addMarker({
+        lat: 45.246480,
+        lng: 0.338336,
+        title: 'SARL SJC Menuiserie',
+        infoWindow: {
+            content: '<p><b>SARL SJC Menuiserie</b><br>24600 Ribérac</p>'
+        }
     });
 
     // Reflow the 'swapImageToBackground' plugin on debounced

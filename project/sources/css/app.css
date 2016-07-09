@@ -9742,21 +9742,9 @@ dd .button:last-child {
   }
 }
 
-/*
- * 
- * Everything related to breadcrumbs
- *
- */
-/*
- * 
- * Pagination
- * 
- */
-/*
- * 
- * Restyling and addons on Foundation forms
- * 
- */
+/* @import "breadcrumbs"; */
+/* @import "pagination"; */
+/* @import "forms"; */
 /*
  * Create flex cell width rules
  */
@@ -10808,9 +10796,7 @@ html.no-flexbox .flex-grid {
   }
 }
 
-/*
- * SVG stuff
- */
+/* @import "svgs"; */
 /*
  * Tables
  */
@@ -11171,49 +11157,8 @@ ul.arrow.defer li > *:first-child:before {
   transform: translate(0%, -50%);
 }
 
-/*
- * 
- * Panels
- * 
- */
-.panel {
-  /*
-     * Remove additional titles top margin
-     */
-  /*
-     * Last paragraph in any container never have bottom margin
-     */
-  /*
-     * Remove negative children for direct .row elements
-     */
-}
-
-.panel h1:first-child,
-.panel h2:first-child,
-.panel h3:first-child,
-.panel h4:first-child,
-.panel h5:first-child,
-.panel h6:first-child,
-.panel p:first-child {
-  margin-top: 0 !important;
-}
-
-.panel p:last-child {
-  margin-bottom: 0;
-}
-
-.panel > .row, html.no-flexbox .panel > .flex-grid,
-.panel > * > .row, html.no-flexbox
-.panel > * > .flex-grid {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-/*
- * 
- * Restyling and addons on Foundation tabs
- * 
- */
+/* @import "panels"; */
+/* @import "tabs"; */
 /*
  *
  * All stuff for page header
@@ -11243,6 +11188,34 @@ ul.arrow.defer li > *:first-child:before {
   font-family: inherit;
 }
 
+@media only screen and (max-width: 40em) {
+  #header-container .top-bar .name p {
+    font-size: 1.8rem;
+  }
+  #header-container .top-bar .name p a {
+    padding: 0 0 0 1.5rem;
+    width: calc(100% - 64px);
+  }
+  #header-container .top-bar .name .toggle-topbar.menu-icon a {
+    padding: 0 2rem;
+  }
+  #header-container .top-bar .name .toggle-topbar.menu-icon a span::after {
+    right: 2.5rem;
+    width: 16px;
+  }
+  #header-container .top-bar:not(.expanded) {
+    height: 5.5rem;
+    line-height: 5.5rem;
+  }
+  #header-container .top-bar:not(.expanded) .name {
+    height: 5.5rem;
+    line-height: 5.5rem;
+  }
+  #header-container .top-bar:not(.expanded) .name p {
+    line-height: 5.5rem;
+  }
+}
+
 @media only screen and (min-width: 64.0625rem) {
   #header-container .fixed {
     border-bottom: 10px solid #3095ef;
@@ -11257,8 +11230,6 @@ ul.arrow.defer li > *:first-child:before {
     text-align: center;
   }
   #header-container .fixed .top-bar .title-area .name .brand-name {
-    /*                            font-size: 3.5rem;
-                            line-height: 4rem;*/
     font-size: 3rem;
     line-height: 3.5rem;
   }
@@ -11266,8 +11237,6 @@ ul.arrow.defer li > *:first-child:before {
     font-size: inherit;
   }
   #header-container .fixed .top-bar .title-area .name .brand-subline {
-    /*                            font-size: 1.2rem;
-                            line-height: 2rem;*/
     font-size: 1rem;
     line-height: 1.8rem;
   }
@@ -11278,6 +11247,16 @@ ul.arrow.defer li > *:first-child:before {
     font-weight: 600;
     color: #f9f6f0;
   }
+}
+
+@media only screen and (min-width: 64.0625rem) and (min-width: 64.0625em) and (max-width: 90em) {
+  #header-container .fixed .top-bar .top-bar-section .menu li a {
+    padding: 0 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (min-width: 64.0625rem) {
   #header-container .fixed .top-bar .top-bar-section .menu li a:hover {
     background-color: #181818;
   }
@@ -11297,6 +11276,18 @@ ul.arrow.defer li > *:first-child:before {
 #body_content .clearing-thumbs li {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+#body_content #location-map #gmap-container {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccd1d9;
+}
+
+@media only screen and (min-width: 40.0625em) {
+  #body_content #location-map #gmap-container {
+    height: 40vh;
+  }
 }
 
 /*
